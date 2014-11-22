@@ -1,8 +1,8 @@
-## These functions have to create a funcionallity that let you cache one Matrix and its
-## inverse Matrix insted of computed it each time, in order to save memory resources.
+## These functions have to create a funcionallity that let you computed the inversal matrix from
+## one sent as a parameter and cache it instead compute it each time, 
+## in order to save memory resources.
 
-## Function for store the invertial matrix of an originla one.
-
+## Function for store the invertial matrix from the original one.
 makeCacheMatrix <- function(originalMat = matrix()) {
     inverseMat <- NULL
     set <- function(y) {
@@ -19,12 +19,11 @@ makeCacheMatrix <- function(originalMat = matrix()) {
 
 
 ## Function for compute or get the inverse matrix stored by above makeCacheMatrix function.
-
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+    ## Return a matrix that is the inverse of 'x'
     m <- x$getInv()
     if(!is.null(m)) {
-        message("getting cached data")
+        message("Getting cached inversal matrix")
         return(m)
     }
     data <- x$get()
